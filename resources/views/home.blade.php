@@ -22,6 +22,9 @@
                             @else
                             <p class="card-text"><span class="fw-bold">In ritardo</span></p>
                             @endif
+                            @if ($train->deleted)
+                            <p class="card-text"><span class="fw-bold">Cancellato</span></p>
+                            @endif
 
                           </div>
                        </div>

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
                 <div class="col-lg-4">
-                    <div class="py-3">
+                    <div class="py-3 text-center">
                         <h1>Lista treni</h1>
                     </div>
 

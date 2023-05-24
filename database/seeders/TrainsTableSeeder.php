@@ -25,7 +25,7 @@ class TrainsTableSeeder extends Seeder
             'train_code' => 'abcdef',
             'carriages' => 4 ,
             'in_time' => 1 ,
-            'deleted' => 0,
+            'deleted' => 0 ,
         ],
         [
             'company' => 'Italferr',
@@ -36,7 +36,7 @@ class TrainsTableSeeder extends Seeder
             'train_code' => 'fedcba',
             'carriages' => 5 ,
             'in_time' => 1 ,
-            'deleted' => 0,
+            'deleted' => 0 ,
         ],
         [
             'company' => 'Italcertifer',
@@ -58,7 +58,7 @@ class TrainsTableSeeder extends Seeder
             'train_code' => 'poeerttmc',
             'carriages' => 10 ,
             'in_time' => 1 ,
-            'deleted' => 0,
+            'deleted' => 0 ,
         ],
         [
             'company' => 'Grandi Stazioni Rail',
@@ -69,7 +69,7 @@ class TrainsTableSeeder extends Seeder
             'train_code' => 'peocnsmf',
             'carriages' => 8 ,
             'in_time' => 0 ,
-            'deleted' => 1,
+            'deleted' => 1 ,
         ],
       ];
       foreach ($data as $train) {
@@ -82,6 +82,7 @@ class TrainsTableSeeder extends Seeder
           $newTrain->train_code = $train['train_code'];
           $newTrain->carriages = $train['carriages'];
           $newTrain->in_time = $train['in_time'];
+          $newTrain->deleted = $train['deleted'];
           $newTrain->save();
 
 
