@@ -2,15 +2,27 @@
 
 @section('content')
 <div class="container">
-    <h1 class="text-white my-3">Lista Films</h1>
-    <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-5 my-5">
-        @foreach ($movies as $movie )
+    <h1 class="text-white my-3">Lista treni</h1>
+    <div class="row row-cols-sm-2 row-cols-md-2 row-cols-lg-2 my-5">
+        @foreach ($trains as $train )
                     <div class="col mt-3">
                        <div class="card">
-                        <img src="{{ $movie->image }}" class="card-img-top" alt="...">
+                         <div class="card-head text-center bg-danger">
+                            <h1 class="card-title">{{$train->company}}</h1>
+                         </div>
                         <div class="card-body">
-                            <p class="card-text">{{ $movie->title }}</p>
-                            <a class="btn btn-primary fs-6" href="{{route('movies.show', ['id'=> $movie->id])}}" role="button">Leggi Descrizione</a>
+                            <p class="card-text"><span class="fw-bold">Partenza:</span> {{ $train->departure_station }}</p>
+                            <p class="card-text"><span class="fw-bold">Arrivo:</span> {{ $train->arrival_station }}</p>
+                            <p class="card-text"><span class="fw-bold">Orario Partenza:</span> {{ $train->departure_time }}</p>
+                            <p class="card-text"><span class="fw-bold">Orario Arrivo:</span> {{ $train->arrival_time }}</p>
+                            <p class="card-text"><span class="fw-bold">Codice Treno:</span> {{ $train->train_code }}</p>
+                            <p class="card-text"><span class="fw-bold">Carrozze:</span> {{ $train->carriages}}</p>
+                            @if ($train->in_time)
+                            <p class="card-text"><span class="fw-bold">In Orario</span></p>
+                            @else
+                            <p class="card-text"><span class="fw-bold">In ritardo</span></p>
+                            @endif
+
                           </div>
                        </div>
 
